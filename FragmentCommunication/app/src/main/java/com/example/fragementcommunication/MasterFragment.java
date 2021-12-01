@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.ListFragment;
 
@@ -25,6 +26,7 @@ public class MasterFragment extends ListFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(mOnMasterSelectedListener != null){
                     mOnMasterSelectedListener.onItemSelected(((TextView)view).getText().toString());
+
                 }
             }
         });

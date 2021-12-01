@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
 
         }else{
+            mDualPane = true;
+
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
             masterFragment = (MasterFragment) getSupportFragmentManager().findFragmentById(R.id.frameLayoutMaster);
