@@ -36,7 +36,9 @@ public class DictionaryDatabase extends SQLiteOpenHelper {
     public void saveRecord(String word, String definition){
         long id = findWordID(word);
         if(id > 0){
-
+            updateRecord(id, word, definition);
+        }else{
+            addRecord(word, definition);
         }
     }
 
