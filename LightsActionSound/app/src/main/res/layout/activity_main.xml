@@ -29,5 +29,12 @@
         android:text="Sound"
         android:onClick="clickSound"
         />
+    <Button
+        android:id="@+id/ButtonLightsActionSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lights Action Sound"
+        android:onClick="clickLightsActionSound"
+        />
 
 </LinearLayout>
