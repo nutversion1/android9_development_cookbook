@@ -7,7 +7,10 @@ import androidx.core.app.NotificationManagerCompat;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
@@ -120,6 +123,24 @@ public class MainActivity extends AppCompatActivity {
                 .setLights(Color.BLUE, 500, 500)
                 .setVibrate(new long[]{250,500,250,500,250,500})
                 .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_VIBRATE);
+
+        /*NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
+        inboxStyle.setBigContentTitle("InBoxStyle - Big Content Title")
+                .addLine("Line 1")
+                .addLine("Line 2");
+        notificationBuilder.setStyle(inboxStyle);*/
+
+        /*NotificationCompat.BigPictureStyle bigPictureStyle = new NotificationCompat.BigPictureStyle();
+        bigPictureStyle.bigPicture(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+        notificationBuilder.setStyle(bigPictureStyle);*/
+
+        NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
+        bigTextStyle.bigText("hello world");
+        notificationBuilder.setStyle(bigTextStyle);
+
+        Intent activityIntent = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, activityIntent, 0);
+        notificationBuilder.addAction(android.R.drawable.ic_dialog_email, "Email", null);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         notificationManager.notify(0, notificationBuilder.build());
