@@ -6,6 +6,8 @@ import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -23,5 +25,15 @@ public class MainActivity extends AppCompatActivity {
 
         List<Sensor> sensors = ((SensorManager) getSystemService(Context.SENSOR_SERVICE))
                 .getSensorList(Sensor.TYPE_ALL);
+
+        for(Sensor sensor : sensors){
+            sensorList.add(sensor.getName());
+        }
+
+        ListAdapter countryAdapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_list_item_1,
+                sensorList);
+        listView.setAdapter(countryAdapter);
     }
 }
