@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 .with(ObjectAnimator.ofFloat(mImageViewExpanded, View.Y, startBounds.top, finalBounds.top))
                 .with(ObjectAnimator.ofFloat(mImageViewExpanded, View.SCALE_X, startScale, 1f))
                 .with(ObjectAnimator.ofFloat(mImageViewExpanded, View.SCALE_Y, startScale, 1f));
-        animatorSet.setDuration(1000);
+        animatorSet.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
         animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.addListener(new Animator.AnimatorListener() {
             @Override
