@@ -26,11 +26,15 @@ public class MainActivity extends AppCompatActivity {
             path.setFillType(Path.FillType.INVERSE_EVEN_ODD);
             int width = canvas.getWidth();
             int height = canvas.getHeight();
+
             path.addCircle(width/2,height/2,400, Path.Direction.CW);
+            //path.addRoundRect(0,0,width, height, 250,250, Path.Direction.CW);
+
             Paint paint = new Paint();
             paint.setColor(Color.TRANSPARENT);
             paint.setAntiAlias(true);
             paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
+
             canvas.drawPath(path, paint);
 
             return PixelFormat.TRANSLUCENT;
