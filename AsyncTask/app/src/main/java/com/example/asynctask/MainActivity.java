@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
+
             }
 
             return count;
@@ -44,10 +46,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-
-            Toast.makeText(MainActivity.this,
-                    "count ",
-                    Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -65,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
             startButton.setEnabled(true);
 
+            Toast.makeText(MainActivity.this,
+                    "finish",
+                    Toast.LENGTH_SHORT).show();
 
         }
 
