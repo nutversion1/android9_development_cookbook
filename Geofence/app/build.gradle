@@ -6,9 +6,9 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.getlocation"
+        applicationId "com.example.geofence"
         minSdk 24
-        targetSdk 32
+        targetSdk 24
         versionCode 1
         versionName "1.0"
 
